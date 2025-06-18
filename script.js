@@ -46,4 +46,10 @@ var typed = new Typed(".typing",{
       icon.classList.replace('fa-sun', 'fa-moon');
     }
   });
+ 
+  const submitBtn=document.querySelector(".submit");
+
+  submitBtn.addEventListener("click",()=>{
+    alert("form submitted");
+  })
 
