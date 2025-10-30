@@ -143,6 +143,9 @@ z-index:999;
 .home .home-content a:hover{
     cursor:pointer;
 }
+.aboutme{
+  font-size:19px;
+}
 
 /* Responsive Design for Tablets and Mobile */
 @media (max-width: 991px) {
@@ -246,7 +249,7 @@ z-index:999;
 
 /* About */
 section{
-    padding:130px 0;
+    padding:80px 0;
 }
 .about .title{
     position:realtive;
@@ -385,7 +388,7 @@ font-size:20px;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px; /* space between cards */
-  padding: 40px 20px;
+  padding: 20px 20px;
 
 }
 .services .title{
@@ -538,7 +541,7 @@ width: calc(45% - 15px);
 }
 .skills .title{
   text-align:center;
-  padding-bottom:80px;
+  padding-bottom:70px;
   font-size:30px;
 color: #9f1e49;
 }
@@ -619,6 +622,7 @@ color: #9f1e49;
 .skills .skill-content .right .sql::before{
      animation-delay: .2s;width:70%;
 }
+
 .skills .skill-content .right .mobile::before{
      animation-delay: .2s;width:70%;
 }@keyframes fill {
@@ -697,7 +701,7 @@ color: #9f1e49;
   color: #9f1e49;
 }
 .card-container {
-  margin-top:80px;
+  margin-top:50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

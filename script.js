@@ -26,7 +26,7 @@ $('.menu-btn').click(function(){
 });
 
 var typed = new Typed(".typing",{
-  strings:["Web Developer","Frontend Developer","Software Developer"],
+  strings:["Frontend Developer","Full Stack Developer","Software Developer"],
   typeSpeed:100,
   BackSpeed:60,
   loop:true,
