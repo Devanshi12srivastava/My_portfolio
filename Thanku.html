@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(to right, #9f1e49, #f35187);
+      color:white;
+    }
+
+    .container{
+      text-align:center;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding:40px 30px;
+      border-radius:15px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease;
+    }
+
+    .checkmark{
+      font-size:60px;
+      margin-bottom:20px;
+      animation: pop 0.6s ease;
+    }
+
+    h1{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+
+    p{
+      font-size:16px;
+      margin-bottom:25px;
+      opacity:0.9;
+    }
+
+    .btn{
+      text-decoration:none;
+      background:white;
+      color:#9f1e49;
+      padding:10px 20px;
+      border-radius:6px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#ffe4ec;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0; transform: translateY(20px);}
+      to{opacity:1; transform: translateY(0);}
+    }
+
+    @keyframes pop{
+      0%{transform: scale(0);}
+      100%{transform: scale(1);}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="checkmark">✅</div>
+    <h1>Thank You!</h1>
+    <p>Your message has been sent successfully.<br> I wll get back to you soon.</p>
+
+    <a href="index.html" class="btn">Back to Home</a>
+  </div>
+
+</body>
+</html>

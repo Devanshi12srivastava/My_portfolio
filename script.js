@@ -1,7 +1,13 @@
+// menu toggle
 $('.menu-btn').click(function(){
     $('.navbar .menu').toggleClass("active");
-        $('.menu-btn i').toggleClass("active");
-    });
+    $('.menu-btn i').toggleClass("active");
+});
+
+$('.navbar .menu li a').click(function(){
+    $('.navbar .menu').removeClass("active");
+    $('.menu-btn i').removeClass("active");
+});
 
  document.querySelectorAll('.btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -26,7 +32,7 @@ $('.menu-btn').click(function(){
 });
 
 var typed = new Typed(".typing",{
-  strings:["Frontend Developer","Full Stack Developer","Software Developer"],
+  strings:["Software Developer","Full Stack Developer","Frontend Developer"],
   typeSpeed:100,
   BackSpeed:60,
   loop:true,
@@ -47,9 +53,91 @@ var typed = new Typed(".typing",{
     }
   });
  
-  const submitBtn=document.querySelector(".submit");
+  // const submitBtn=document.querySelector(".submit");
 
-  submitBtn.addEventListener("click",()=>{
-    alert("form submitted");
-  })
+  // submitBtn.addEventListener("click",()=>{
+  //   alert("Form submitted Thanku For Your Query");
+  // })
 
+const cards = document.querySelectorAll(".card");
+
+function revealCards() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  cards.forEach((card, index) => {
+    const cardTop = card.getBoundingClientRect().top;
+
+    if (cardTop < triggerBottom) {
+      setTimeout(() => {
+        card.classList.add("show");
+      }, index * 150); // 🔥 delay for each card
+    }
+  });
+}
+
+window.addEventListener("scroll", revealCards);
+
+// page load pe bhi run
+revealCards();
+const eduCards = document.querySelectorAll('.edu1, .edu2, .edu3, .edu4');
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry, index)=>{
+    if(entry.isIntersecting){
+      
+      setTimeout(() => {
+        entry.target.classList.add('show');
+      }, index * 200); // 👈 delay (200ms gap between cards)
+
+    }
+  });
+},{ threshold: 0.2 });
+
+eduCards.forEach(card=>{
+  observer.observe(card);
+});
+const projectCards = document.querySelectorAll('.card1');
+
+const projectObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+
+      setTimeout(() => {
+        entry.target.classList.add('show');
+      }, index * 200); // 👈 delay (each card 200ms gap)
+
+    }
+  });
+}, { threshold: 0.2 });
+
+projectCards.forEach(card => {
+  projectObserver.observe(card);
+});
+const contactSection = document.querySelector('.contact');
+
+const contactObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      contactSection.classList.add('show');
+    }
+  });
+},{ threshold: 0.3 });
+
+contactObserver.observe(contactSection);
+
+function validateForm() {
+    let name = document.querySelector('input[name="name"]').value.trim();
+    let email = document.querySelector('input[name="email"]').value.trim();
+
+    if (name === "" || email === "") {
+        alert("Name aur Email fill karo");
+        return false; // ❌ stop submit
+    }
+
+    // 👇 success alert (IMPORTANT)
+    setTimeout(() => {
+        alert("Form submitted successfully ✅");
+    }, 100);
+
+    return true; // ✅ allow submit
+}
